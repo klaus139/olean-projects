@@ -1,12 +1,18 @@
-/** @type {import('tailwindcss').Config} */
+const { truncate } = require("fs/promises");
+
 module.exports = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './app/**/*.{js,ts,jsx,tsx}',
-  ],
+  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  darkMode: true, // or 'media' or 'class'
   theme: {
+    extend: {
+      spacing: {
+        '2/3': '66.666667%',
+      },
+    },
+  },
+  variants: {
     extend: {},
   },
   plugins: [],
-}
+
+};
