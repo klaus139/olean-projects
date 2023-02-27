@@ -93,8 +93,8 @@ export const getSimilarPosts = async (categories: string, slug:string) => {
     return result.categories;
 
   }
-  
-  export const getPostDetails = async (slug) => {
+
+  export const getPostDetails = async (slug:any) => {
     const query = gql`
       query GetPostDetails($slug : String!) {
         post(where: {slug: $slug}) {
