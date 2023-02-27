@@ -46,20 +46,20 @@ import React from "react";
 import moment from "moment";
 import Link from "next/link";
 
-const PostCard = ({ post }) => {
+const PostCard = ({ post }:{post: any}) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
-      <div className="flex items-center justify-center lg:justify-start">
+    <div className="bg-gray-200 shadow-lg rounded-lg p-0 lg:p-2 md:p-2 sm:p-2 pb-12 mb-5">
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start">
         <img
           src={post.featuredImage.url}
           alt={post.title}
-          className="w-24 h-24 object-cover rounded-full mr-4"
+          className="w-24 h-24 object-cover rounded-full mr-4 lg:mr-8 mb-4 lg:mb-0"
         />
         <div className="flex-1">
-          <h1 className="transition duration-300 cursor-pointer hover:text-pink-600 text-3xl font-semibold">
+          <h1 className="transition duration-300 cursor-pointer hover:text-pink-600 text-1xl font-semibold pl-1">
             <Link href={`/post/${post.slug}`}>{post.title}</Link>
           </h1>
-          <div className="flex items-center text-gray-700 font-medium mb-2">
+          <div className="flex items-center text-gray-700 font-medium mb-2 pl-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 inline mr-2 text-pink-500"
@@ -76,7 +76,7 @@ const PostCard = ({ post }) => {
             </svg>
             <span>{moment(post.createdAt).format("MMM DD YYYY")}</span>
           </div>
-          <p className="text-gray-700 font-normal mb-2">{post.excerpt}</p>
+          <p className="text-gray-600 font-normal text-sm mb-2 pl-2">{post.excerpt}</p>
           <div className="text-center">
             <Link href={`/post/${post.slug}`}>
               <span className="transition duration-500 transform hover:-translate-y-1 inline-block bg-pink-600 text-sm font-medium rounded-md text-white px-4 py-2 cursor-pointer">
